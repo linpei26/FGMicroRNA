@@ -14,11 +14,11 @@ using namespace std;
 int main (int argc, char* argv[])
 {
 	
-	int ngene = 100;
+	int ngene = 2000;
 	int total_optim = 0;
 	// 	
 	int N = 10000;
-	int totalrun = 100;
+	int totalrun = 1000;
 	double omega;
 	double index;
 	double strongeffectprop;
@@ -38,7 +38,10 @@ int main (int argc, char* argv[])
 	double m_in = 1/m;
 	double mu1 = 1/smallmu;
 	double mu2 = 1/largemu;
+	
+	// mind: if the expression distance between current population and optim was less than "mind", simulation would be stopped. 
 	double mind = 0.5 * smallmu;			
+	
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 	std::default_random_engine generator(seed);
 	
